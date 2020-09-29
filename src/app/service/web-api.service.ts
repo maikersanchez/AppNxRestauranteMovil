@@ -9,11 +9,16 @@ const URL_BASE = "https://localhost:44353/";
 export class WebApiService {
   baseUrl: string
 
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json'
-    })
-  };
+  // httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type':  'application/json'
+  //   })
+  // };
+
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'text/html; charset=UTF-8',
+                   'Access-Control-Allow-Origin': '*',
+                   'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS, PUT, HEAD',
+                   'Access-Control-Allow-Headers': 'Content-Type' })};
 
   constructor(private http: HttpClient) {
     this.baseUrl = URL_BASE;
@@ -28,7 +33,10 @@ export class WebApiService {
   }
 
   wsDelete(urlComplemento: string) {
-    return this.http.delete(this.baseUrl + urlComplemento).pipe(map(this.extract));
+    
+    return this.http.delete(this.baseUrl + urlComplemento, this.httpOptions).subscribe(res =>{
+      console.log(res);
+    });
   }
 
   wsPut(urlComplemento: string, body) {

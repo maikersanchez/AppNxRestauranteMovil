@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro Camarero</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <form [formGroup]="formCamarero">
+    <ion-list>
+      <ion-item>
+        <!-- <ion-icon name="person" item-left></ion-icon> -->
+        <ion-label stacked>Identificacion:</ion-label>
+        <ion-input formControlName="IdCamarero" type="number" placeholder="Identificacion de camarero"></ion-input>
+      </ion-item>
+      <!-- <ion-item *ngIf="formCamarero.get('IdCamarero').errors && formCamarero.get('IdCamarero').dirty">
+        <p *ngIf="formCamarero.get('nombre').hasError('required')">Campo es requerido</p>
+      </ion-item> -->
+      <ion-item>
+        <!-- <ion-icon name="mail" item-left></ion-icon> -->
+        <ion-label stacked>Nombre:</ion-label>
+        <ion-input formControlName="VNombre" type="text" placeholder="Ingrese nombre"></ion-input>
+      </ion-item>
+      <!-- <ion-item *ngIf="formCamarero.get('VNombre').errors && formCamarero.get('VNombre').dirty">
+        <p *ngIf="formCamarero.get('VNombre').hasError('required')">Campo es requerido</p>
+        <p *ngIf="formCamarero.get('VNombre').hasError('minlength')">Min de 5 caracteres</p>
+        <p *ngIf="formCamarero.get('VNombre').hasError('maxlength')">Max de 50 caracteres</p>
+      </ion-item> -->
+      <ion-item>
+        <!-- <ion-icon name="eye" item-left></ion-icon> -->
+        <ion-label stacked>Primer Apellido </ion-label>
+        <ion-input formControlName="VApellido1" type="text" placeholder="Contraseña"></ion-input>
+      </ion-item>
+      <!-- <ion-item *ngIf="formCamarero.get('VApellido1').errors && formCamarero.get('VApellido1').dirty">
+        <p *ngIf="formCamarero.get('VApellido1').hasError('required')">Campo es requerido</p>
+        <p *ngIf="formCamarero.get('VApellido1').hasError('minlength')">Min de 5 caracteres</p>
+        <p *ngIf="formCamarero.get('VApellido1').hasError('maxlength')">Max de 10 caracteres</p>
+      </ion-item> -->
+      <ion-item>
+        <!-- <ion-icon name="" item-left></ion-icon> -->
+        <ion-label stacked>Segundo Apellidos:</ion-label>
+        <ion-input formControlName="VApellido2" type="text" placeholder="Ingrese apellido"></ion-input>
+      </ion-item>
+      <!-- <ion-item *ngIf="formCamarero.get('VApellido2').errors && formCamarero.get('apellido').dirty">
+        <p *ngIf="formCamarero.get('VApellido2').hasError('required')">Campo es requerido</p>
+        <p *ngIf="formCamarero.get('VApellido2').hasError('minlength')">Min de 5 caracteres</p>
+        <p *ngIf="formCamarero.get('VApellido2').hasError('maxlength')">Max de 10 caracteres</p>
+      </ion-item> -->
+      <div padding>
+        <button (click)="sendRegistro()" ion-button block type="submit" [disabled]="!formCamarero.valid"
+          color="primary">Guardar</button>
+
+      </div>
+    </ion-list>
+  </form>
+</ion-content>

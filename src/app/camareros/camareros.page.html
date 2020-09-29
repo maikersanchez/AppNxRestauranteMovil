@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Camareros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list *ngFor="let item of listRehistros">
+      <ion-item>
+        <h2>{{item.vNombre}} {{item.vApellido1}} {{item.vApellido2}}</h2>
+        <ion-buttons end>
+          <button  ion-button icon-end color="royal" (click)="eliminarCamarero(item.idCamarero)">
+            Eliminar
+            <ion-icon name="trash-outline"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-item>
+    </ion-list>
+</ion-content>

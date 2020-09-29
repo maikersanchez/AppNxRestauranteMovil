@@ -14,17 +14,27 @@ export class AppComponent implements OnInit {
   public appPages = [
     {
       title: 'Principal',
-      url: '/principal/principal',
+      url: '/principal',
       icon: 'home'
     },
     {
+      title: 'camareros',
+      url: '/camareros',
+      icon: 'list'
+    },
+    {
+      title: 'Registro Camarero',
+      url: '/registro-camarero',
+      icon: 'document'
+    },
+    {
       title: 'Reporte Cliente',
-      url: '/reporte-cliente/reporte-cliente',
+      url: '/reporte-cliente',
       icon: 'document'
     },
     {
       title: 'Reporte Camarero',
-      url: '/reporte-camarero/reporte-camarero',
+      url: '/reporte-camarero',
       icon: 'document'
     }
   ];
