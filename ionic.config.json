@@ -1,5 +1,7 @@
 {
   "name": "AppNxRestauranteMovil",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
